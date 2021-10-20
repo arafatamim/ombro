@@ -1,12 +1,14 @@
-import { Point } from "./point";
+import Point from "./point";
 
-export class Light {
+export default class Light {
   #intensity: number;
+
   #position: Point;
 
   public get position(): Point {
     return this.#position;
   }
+
   public set position(position: Point) {
     this.#position = position;
   }

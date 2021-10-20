@@ -1,7 +1,7 @@
-import { Color } from "./color";
+import Color from "./color";
 import { Config, ConfigProps } from "./config";
-import { Light } from "./light";
-import { Shadow } from "./shadow";
+import Light from "./light";
+import Shadow from "./shadow";
 
 export default class Ombro {
   #light: Light;

@@ -1,4 +1,4 @@
-import { Color } from "./color";
+import Color from "./color";
 
 export interface ConfigProps {
   /** The quality of the shadow drawn. Higher numbers may
