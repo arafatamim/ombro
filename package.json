@@ -1,13 +1,13 @@
 {
   "name": "ombro",
   "version": "0.0.1",
-  "description": "",
+  "description": "Create beautiful, dynamic shadows in JavaScript",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
     "build": "rimraf ./dist && rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint ./src --ext .ts"
   },
   "author": "Tamim Arafat <tamim.arafat@gmail.com>",
   "license": "MIT",

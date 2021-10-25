@@ -20,6 +20,8 @@
         "prettier"
     ],
     "rules": {
-      "no-multi-assign": "off"
+      "no-multi-assign": "off",
+      "import/no-default-export": "warn",
+      "import/prefer-default-export": "off"
     }
 }
