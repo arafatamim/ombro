@@ -1,4 +1,4 @@
-export default class Color {
+export class Color {
   readonly r: number;
 
   readonly g: number;

@@ -1,6 +1,6 @@
-import Point from "./point";
+import { Point } from "./point";
 
-export default class Light {
+export class Light {
   #intensity: number;
 
   #position: Point;

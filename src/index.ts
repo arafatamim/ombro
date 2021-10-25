@@ -1,9 +1,10 @@
-import Color from "./color";
-import { Config, ConfigProps } from "./config";
-import Light from "./light";
-import Shadow from "./shadow";
+import { Color } from "./color";
+import type { Config, ConfigProps } from "./config";
+import { Light } from "./light";
+import { Shadow } from "./shadow";
+import { Point } from "./point";
 
-export default class Ombro {
+export class Ombro {
   #light: Light;
 
   #config: ConfigProps;
@@ -115,3 +116,5 @@ export default class Ombro {
     this.updateContent();
   }
 }
+
+export { Config, Color, Light, Point, Shadow };

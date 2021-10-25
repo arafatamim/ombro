@@ -1,10 +1,21 @@
-import Color from "./color";
+import { Color } from "./color";
 import { ConfigProps } from "./config";
-import Light from "./light";
-import Point from "./point";
+import { Light } from "./light";
+import { Point } from "./point";
 import { debounce } from "./timing";
 
-export default class Shadow {
+function getShadowString(
+  color: Color,
+  opacity: number,
+  offsetX: number,
+  offsetY: number,
+  blurRadius: number
+): string {
+  const colorString = `rgba(${color.r}, ${color.g}, ${color.b}, ${opacity})`;
+  return `${colorString} ${offsetX}px ${offsetY}px ${Math.round(blurRadius)}px`;
+}
+
+export class Shadow {
   readonly #position: Point;
 
   readonly #domElement: HTMLElement;
@@ -65,7 +76,7 @@ export default class Shadow {
       const offsetY = -(config.offset * delta.y * ratioOffset);
       const blurRadius = (distance * config.blur * ratioBlur) / 512;
 
-      const shadow = this.getShadow(
+      const shadow = getShadowString(
         config.shadowColor,
         opacity,
         offsetX,
@@ -77,19 +88,6 @@ export default class Shadow {
 
     this.drawShadows(shadows);
   }
-
-  getShadow = (
-    color: Color,
-    opacity: number,
-    offsetX: number,
-    offsetY: number,
-    blurRadius: number
-  ): string => {
-    const colorString = `rgba(${color.r}, ${color.g}, ${color.b}, ${opacity})`;
-    return `${colorString} ${offsetX}px ${offsetY}px ${Math.round(
-      blurRadius
-    )}px`;
-  };
 
   drawShadows(shadows: string[]) {
     this.#domElement.style[this.#shadowProperty as any] = shadows.join(", ");
