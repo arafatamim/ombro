@@ -1,0 +1,12 @@
+test/
+examples/
+
+pnpm-lock.yaml
+
+.travis.yml
+.jenkins.yml
+.github/
+.husky/
+
+.eslintrc*
+
