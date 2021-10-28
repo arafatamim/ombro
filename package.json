@@ -7,7 +7,7 @@
   "typings": "./dist/index.d.ts",
   "scripts": {
     "build": "rimraf ./dist && rollup -c",
-    "lint": "eslint ./src --ext .ts"
+    "lint": "eslint ./src --ext .ts && tsc --noEmit -p ."
   },
   "author": "Tamim Arafat <tamim.arafat@gmail.com>",
   "license": "MIT",

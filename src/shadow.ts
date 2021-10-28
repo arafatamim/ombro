@@ -1,7 +1,8 @@
 import { Color } from "./color";
 import { ConfigProps } from "./config";
 import { Light } from "./light";
-import { Point } from "./point";
+import type { Point } from "./point";
+import { delta } from "./point";
 import { debounce } from "./timing";
 
 function getShadowString(
@@ -35,7 +36,7 @@ export class Shadow {
   }
 
   constructor(domElement: HTMLElement, enableAutoUpdates = false) {
-    this.#position = new Point(0, 0);
+    this.#position = [0, 0];
     this.#domElement = domElement;
 
     this.#fnHandleWindowLoaded = this.handleWindowLoaded.bind(this);
@@ -55,13 +56,10 @@ export class Shadow {
   }
 
   draw(light: Light, config: ConfigProps): void {
-    const delta = this.#position.delta(light.position);
-    const distance = Math.max(
-      32,
-      Math.sqrt(delta.x * delta.x + delta.y * delta.y)
-    );
+    const [x, y] = delta(light.position, this.#position);
+    const distance = Math.max(32, Math.sqrt(x * x + y * y));
 
-    const shadows = [];
+    const shadows = [] as string[];
 
     for (let i = 0; i < config.steps; i += 1) {
       const ratio = i / config.steps;
@@ -72,8 +70,8 @@ export class Shadow {
 
       const opacity =
         light.intensity * Math.max(0, config.opacity * (1.0 - ratioOpacity));
-      const offsetX = -(config.offset * delta.x * ratioOffset);
-      const offsetY = -(config.offset * delta.y * ratioOffset);
+      const offsetX = -(config.offset * x * ratioOffset);
+      const offsetY = -(config.offset * y * ratioOffset);
       const blurRadius = (distance * config.blur * ratioBlur) / 512;
 
       const shadow = getShadowString(
@@ -123,8 +121,8 @@ export class Shadow {
   handleViewportUpdate() {
     if (this.#domElement != null) {
       const boundingRect = this.#domElement.getBoundingClientRect();
-      this.#position.x = boundingRect.left + boundingRect.width * 0.5;
-      this.#position.y = boundingRect.top + boundingRect.height * 0.5;
+      this.#position[0] = boundingRect.left + boundingRect.width * 0.5;
+      this.#position[1] = boundingRect.top + boundingRect.height * 0.5;
     } else {
       throw new Error(
         "Unhandled exception: Cannot update shadows as dom element is undefined"

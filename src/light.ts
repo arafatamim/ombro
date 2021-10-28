@@ -1,4 +1,4 @@
-import { Point } from "./point";
+import type { Point } from "./point";
 
 export class Light {
   #intensity: number;
@@ -17,7 +17,7 @@ export class Light {
     return this.#intensity;
   }
 
-  constructor(position: Point = new Point(0, 0)) {
+  constructor(position: Point = [0, 0]) {
     this.#intensity = 1.0;
     this.#position = position;
   }

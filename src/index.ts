@@ -2,7 +2,7 @@ import { Color } from "./color";
 import type { Config, ConfigProps } from "./config";
 import { Light } from "./light";
 import { Shadow } from "./shadow";
-import { Point } from "./point";
+import type { Point } from "./point";
 
 export class Ombro {
   #light: Light;
@@ -47,8 +47,7 @@ export class Ombro {
 
   /** Sets the coordinates of the light source */
   setLightPosition(x: number, y: number): void {
-    this.#light.position.x = x;
-    this.#light.position.y = y;
+    this.#light.position = [x, y];
   }
 
   destroy(): void {

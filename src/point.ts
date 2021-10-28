@@ -1,14 +1,5 @@
-export class Point {
-  x: number;
+export type Point = [x: number, y: number];
 
-  y: number;
-
-  constructor(x: number, y: number) {
-    this.x = x;
-    this.y = y;
-  }
-
-  delta(point: Point): Point {
-    return new Point(point.x - this.x, point.y - this.y);
-  }
+export function delta([x1, y1]: Point, [x2, y2]: Point): Point {
+  return [x1 - y1, x2 - y2];
 }

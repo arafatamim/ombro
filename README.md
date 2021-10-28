@@ -2,6 +2,8 @@
 
 Create beautiful, dynamic shadows using JavaScript.
 
+> _"Ombro" is a noun meaning "shadow" in Esperanto._
+
 ## Installation
 
 NPM:
