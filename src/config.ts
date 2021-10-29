@@ -3,12 +3,12 @@ import { Color } from "./color";
 export interface ConfigProps {
   /** The quality of the shadow drawn. Higher numbers may
    * lead to lower performance on some devices.
-   * @default 8
+   * @default 5
    */
   steps: number;
 
   /** The opacity of shadow in range 0-1.
-   * @default 0.1
+   * @default 0.15
    * */
   opacity: number;
   /** The power applied to the shadow opacity.
@@ -30,7 +30,7 @@ export interface ConfigProps {
    */
   blur: number;
   /** The factor by which to blur each step in the shadow.
-   * @default 1.4
+   * @default 1.0
    */
   blurPow: number;
 
