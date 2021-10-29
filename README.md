@@ -4,11 +4,26 @@ Create beautiful, dynamic shadows using JavaScript.
 
 > _"Ombro" is a noun meaning "shadow" in Esperanto._
 
+[![https://nodei.co/npm/ombro.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/ombro.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/ombro)
+
 ## Installation
 
 NPM:
 ```sh
 npm install ombro
+```
+
+Using it in a script tag (IIFE), where the `ombro` namespace is available globally:
+```html
+<script type="text/javascript" src="https://unpkg.com/ombro/dist/iife/index.js"></script>
+```
+
+Importing as an ES module:
+```html
+<script type="module">
+import { Ombro } from "https://unpkg.com/ombro/dist/esm/index.js"
+...
+</script>
 ```
 
 ## Usage
