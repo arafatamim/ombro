@@ -89,7 +89,7 @@ export class Shadow {
     this.drawShadows(shadows);
   }
 
-  drawShadows(shadows: string[]) {
+  drawShadows(shadows: string[]): void {
     this.#domElement.style[this.#shadowProperty as any] = shadows.join(", ");
   }
 
@@ -120,7 +120,7 @@ export class Shadow {
     window.removeEventListener("scroll", fnHandleViewportUpdate, false);
   }
 
-  handleViewportUpdate() {
+  handleViewportUpdate(): void {
     if (this.#domElement != null) {
       const boundingRect = this.#domElement.getBoundingClientRect();
       this.#position[0] = boundingRect.left + boundingRect.width * 0.5;
