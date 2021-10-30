@@ -41,16 +41,18 @@ export class Shadow {
 
     this.#fnHandleWindowLoaded = this.handleWindowLoaded.bind(this);
 
-    if (enableAutoUpdates) this.enableAutoUpdates();
-    this.handleViewportUpdate();
+    if (enableAutoUpdates) {
+      this.enableAutoUpdates();
+      this.handleViewportUpdate();
+    }
 
     window.addEventListener("load", this.#fnHandleWindowLoaded, false);
+
+    this.handleViewportUpdate = this.handleViewportUpdate.bind(this);
   }
 
   destroy(): void {
-    if (this.#fnHandleWindowLoaded != null) {
-      window.removeEventListener("load", this.#fnHandleWindowLoaded, false);
-    }
+    window.removeEventListener("load", this.#fnHandleWindowLoaded, false);
     this.disableAutoUpdates();
     this.#domElement.style[this.#shadowProperty as any] = "";
   }

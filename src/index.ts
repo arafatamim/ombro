@@ -78,8 +78,7 @@ export class Ombro {
   /** Redraws shadows when window is scrolled or resized */
   enableAutoUpdates(): void {
     this.disableAutoUpdates();
-    this.#config.enableAutoUpdates = true;
-
+    // this.#config.enableAutoUpdates = true;
     // store reference for more efficient minification
     const fnDrawHandler = (this.#fnDrawHandler = this.draw.bind(this));
 
@@ -91,7 +90,7 @@ export class Ombro {
 
   /** Disables auto updates of shadows */
   disableAutoUpdates(): void {
-    this.#config.enableAutoUpdates = false;
+    // this.#config.enableAutoUpdates = false;
 
     const fnDrawHandler = this.#fnDrawHandler;
 
