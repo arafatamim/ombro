@@ -13,6 +13,15 @@
   },
   "author": "Tamim Arafat <tamim.arafat@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/arafatamim/ombro.git"
+  },
+  "homepage": "https://arafatamim.github.io/ombro/",
+  "bugs": {
+    "url": "https://github.com/arafatamim/ombro/issues"
+  },
+  "keywords": ["shadow", "dom", "css"],
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
