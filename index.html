@@ -1,0 +1,150 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>ombro</title><meta name="description" content="Documentation for ombro"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">ombro</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>ombro</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#ombro" id="ombro" style="color: inherit; text-decoration: none;">
+  <h1>Ombro</h1>
+</a>
+<p>Create beautiful, dynamic shadows using JavaScript.</p>
+<blockquote>
+<p><em>&quot;Ombro&quot; is a noun meaning &quot;shadow&quot; in Esperanto.</em></p>
+</blockquote>
+<p><a href="https://www.npmjs.com/package/ombro"><img src="https://nodei.co/npm/ombro.png?downloads=true&downloadRank=true&stars=true" alt="https://nodei.co/npm/ombro.png?downloads=true&amp;downloadRank=true&amp;stars=true"></a></p>
+
+<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+  <h2>Installation</h2>
+</a>
+<p>NPM:</p>
+<pre><code class="language-sh"><span class="hl-0">npm install ombro</span>
+</code></pre>
+<p>Using it in a script tag (IIFE), where the <code>ombro</code> namespace is available globally:</p>
+<pre><code class="language-html"><span class="hl-1">&lt;</span><span class="hl-2">script</span><span class="hl-3"> </span><span class="hl-4">type</span><span class="hl-3">=</span><span class="hl-5">&quot;text/javascript&quot;</span><span class="hl-3"> </span><span class="hl-4">src</span><span class="hl-3">=</span><span class="hl-5">&quot;https://unpkg.com/ombro/dist/iife/index.js&quot;</span><span class="hl-1">&gt;&lt;/</span><span class="hl-2">script</span><span class="hl-1">&gt;</span>
+</code></pre>
+<p>Importing as an ES module:</p>
+<pre><code class="language-html"><span class="hl-1">&lt;</span><span class="hl-2">script</span><span class="hl-3"> </span><span class="hl-4">type</span><span class="hl-3">=</span><span class="hl-5">&quot;module&quot;</span><span class="hl-1">&gt;</span><br/><span class="hl-6">import</span><span class="hl-3"> { </span><span class="hl-7">Ombro</span><span class="hl-3"> } </span><span class="hl-6">from</span><span class="hl-3"> </span><span class="hl-8">&quot;https://unpkg.com/ombro/dist/esm/index.js&quot;</span><br/><span class="hl-0">...</span><br/><span class="hl-1">&lt;/</span><span class="hl-2">script</span><span class="hl-1">&gt;</span>
+</code></pre>
+
+<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+  <h2>Usage</h2>
+</a>
+<pre><code class="language-js"><span class="hl-6">import</span><span class="hl-0"> { </span><span class="hl-7">Ombro</span><span class="hl-0">, </span><span class="hl-7">Color</span><span class="hl-0"> } </span><span class="hl-6">from</span><span class="hl-0"> </span><span class="hl-8">&quot;ombro&quot;</span><br/><br/><span class="hl-9">// Create an Ombro instance and attach it to the DOM element you&#39;d like to shine</span><br/><span class="hl-10">const</span><span class="hl-0"> </span><span class="hl-11">element</span><span class="hl-0"> = </span><span class="hl-7">document</span><span class="hl-0">.</span><span class="hl-12">getElementById</span><span class="hl-0">(</span><span class="hl-8">&quot;element&quot;</span><span class="hl-0">)</span><br/><span class="hl-10">const</span><span class="hl-0"> </span><span class="hl-11">ombro</span><span class="hl-0"> = </span><span class="hl-10">new</span><span class="hl-0"> </span><span class="hl-12">Ombro</span><span class="hl-0">(</span><span class="hl-7">element</span><span class="hl-0">, {</span><br/><span class="hl-0">    </span><span class="hl-9">// Optionally set configuration options</span><br/><span class="hl-0">    </span><span class="hl-7">shadowColor:</span><span class="hl-0"> </span><span class="hl-10">new</span><span class="hl-0"> </span><span class="hl-12">Color</span><span class="hl-0">(</span><span class="hl-13">0</span><span class="hl-0">, </span><span class="hl-13">0</span><span class="hl-0">, </span><span class="hl-13">0</span><span class="hl-0">)</span><br/><span class="hl-0">})</span><br/><br/><span class="hl-9">// Set the light position to mouse pointer coordinates</span><br/><span class="hl-7">window</span><span class="hl-0">.</span><span class="hl-12">addEventListener</span><span class="hl-0">(</span><span class="hl-8">&quot;mousemove&quot;</span><span class="hl-0">, </span><span class="hl-10">function</span><span class="hl-0">(</span><span class="hl-7">event</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-7">ombro</span><span class="hl-0">.</span><span class="hl-12">setLightPosition</span><span class="hl-0">(</span><span class="hl-7">event</span><span class="hl-0">.</span><span class="hl-7">x</span><span class="hl-0">, </span><span class="hl-7">event</span><span class="hl-0">.</span><span class="hl-7">y</span><span class="hl-0">)    </span><span class="hl-9">// set coordinates of light position</span><br/><span class="hl-0">    </span><span class="hl-7">ombro</span><span class="hl-0">.</span><span class="hl-12">draw</span><span class="hl-0">()    </span><span class="hl-9">// redraw shadows on change</span><br/><span class="hl-0">}, </span><span class="hl-10">false</span><span class="hl-0">)</span>
+</code></pre>
+
+<a href="#api-reference" id="api-reference" style="color: inherit; text-decoration: none;">
+  <h2>API Reference</h2>
+</a>
+
+<a href="#new-ombrodomelement-htmlelement-config-ombroconfig" id="new-ombrodomelement-htmlelement-config-ombroconfig" style="color: inherit; text-decoration: none;">
+  <h4><code>new Ombro(domElement: HTMLElement, config?: ombro.Config)</code></h4>
+</a>
+<p>Constructs an Ombro instance with configuration options that you can optionally set before initialization. Below is the list of all configuration options and their descriptions.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>steps</td>
+<td><code>number</code></td>
+<td>The quality of the shadow drawn. Higher numbers may lead to lower perfomance on some devices.</td>
+<td><code>5</code></td>
+</tr>
+<tr>
+<td>opacity</td>
+<td><code>number</code></td>
+<td>The opacity of the shadow in range between 0 and 1.</td>
+<td><code>0.15</code></td>
+</tr>
+<tr>
+<td>opacityPow</td>
+<td><code>number</code></td>
+<td>The power applied to the shadow opacity.</td>
+<td><code>1.2</code></td>
+</tr>
+<tr>
+<td>offset</td>
+<td><code>number</code></td>
+<td>The length of the shadow to be drawn.</td>
+<td><code>0.15</code></td>
+</tr>
+<tr>
+<td>offsetPow</td>
+<td><code>number</code></td>
+<td>The power applied to the shadow offset.</td>
+<td><code>1.8</code></td>
+</tr>
+<tr>
+<td>blur</td>
+<td><code>number</code></td>
+<td>The strength of the shadow blur.</td>
+<td><code>40</code></td>
+</tr>
+<tr>
+<td>blurPow</td>
+<td><code>number</code></td>
+<td>The exponent to apply the blur of each step in shadow.</td>
+<td><code>1.0</code></td>
+</tr>
+<tr>
+<td>shadowColor</td>
+<td><code>ombro.Color</code></td>
+<td>The color of the shadow</td>
+<td><code>new ombro.Color(0, 0, 0)</code></td>
+</tr>
+<tr>
+<td>enableAutoUpdates</td>
+<td><code>boolean</code></td>
+<td>Whether to redraw shadows when window is scrolled or resized</td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+
+<a href="#ombroprototypesetlightpositionx-number-y-number" id="ombroprototypesetlightpositionx-number-y-number" style="color: inherit; text-decoration: none;">
+  <h4><code>Ombro.prototype.setLightPosition(x: number, y: number)</code></h4>
+</a>
+<p>Sets the coordinates of the light source.</p>
+
+<a href="#ombroprototypedraw" id="ombroprototypedraw" style="color: inherit; text-decoration: none;">
+  <h4><code>Ombro.prototype.draw()</code></h4>
+</a>
+<p>Draw all shadows based on current light position. Call this method whenever a parameter has changed.</p>
+
+<a href="#ombroprototypedestroy" id="ombroprototypedestroy" style="color: inherit; text-decoration: none;">
+  <h4><code>Ombro.prototype.destroy()</code></h4>
+</a>
+<p>Removes all event listeners that were set when auto updates were enabled.</p>
+
+<a href="#ombrocolor" id="ombrocolor" style="color: inherit; text-decoration: none;">
+  <h3>ombro.Color</h3>
+</a>
+
+<a href="#new-ombrocolorr-number-g-number-b-number-alpha-number--10" id="new-ombrocolorr-number-g-number-b-number-alpha-number--10" style="color: inherit; text-decoration: none;">
+  <h4><code>new ombro.Color(r: number, g: number, b: number, alpha?: number = 1.0)</code></h4>
+</a>
+<p>Creates a new color object, where <code>r</code>, <code>g</code>, and <code>b</code> each represent a unit of color measured on a scale of 0-255, and <code>alpha</code> is specified in range between 0 and 1, where 1 is fully opaque.</p>
+
+<a href="#ombrocolorfromhexstringhex-string-color" id="ombrocolorfromhexstringhex-string-color" style="color: inherit; text-decoration: none;">
+  <h4><code>ombro.Color.fromHexString(hex: string): Color</code></h4>
+</a>
+<p>Constructs a <code>ombro.Color</code> object from a hex color string.
+Here are some examples of valid color strings:</p>
+<pre><code class="language-js"><span class="hl-7">ombro</span><span class="hl-0">.</span><span class="hl-7">Color</span><span class="hl-0">.</span><span class="hl-12">fromHexString</span><span class="hl-0">(</span><span class="hl-8">&quot;#f59c22&quot;</span><span class="hl-0">)</span><br/><span class="hl-7">ombro</span><span class="hl-0">.</span><span class="hl-7">Color</span><span class="hl-0">.</span><span class="hl-12">fromHexString</span><span class="hl-0">(</span><span class="hl-8">&quot;#fff&quot;</span><span class="hl-0">)</span><br/><span class="hl-7">ombro</span><span class="hl-0">.</span><span class="hl-7">Color</span><span class="hl-0">.</span><span class="hl-12">fromHexString</span><span class="hl-0">(</span><span class="hl-8">&quot;#f22c45ee&quot;</span><span class="hl-0">)</span>
+</code></pre>
+
+<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+  <h2>Contributing</h2>
+</a>
+<p>Please open a new issue if you discover a bug or want to discuss a feature. If you have a bug fix ready, you are welcome to open a pull request.</p>
+
+<a href="#credits" id="credits" style="color: inherit; text-decoration: none;">
+  <h2>Credits</h2>
+</a>
+<p>Forked from the unmaintained library <a href="https://github.com/bigspaceship/shine.js">shine.js</a> and ported to TypeScript.</p>
+
+<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+  <h2>License</h2>
+</a>
+<p>MIT Licensed.</p>
+<p>© 2021 Tamim Arafat.</p>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-class"><a href="classes/Color.html" class="tsd-kind-icon">Color</a></li><li class="tsd-kind-class"><a href="classes/Light.html" class="tsd-kind-icon">Light</a></li><li class="tsd-kind-class"><a href="classes/Ombro.html" class="tsd-kind-icon">Ombro</a></li><li class="tsd-kind-class"><a href="classes/Shadow.html" class="tsd-kind-icon">Shadow</a></li><li class="tsd-kind-interface"><a href="interfaces/ConfigProps.html" class="tsd-kind-icon">Config<wbr/>Props</a></li><li class="tsd-kind-type-alias"><a href="modules.html#Config" class="tsd-kind-icon">Config</a></li><li class="tsd-kind-type-alias"><a href="modules.html#Point" class="tsd-kind-icon">Point</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li><li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li><li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li><li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li><li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
