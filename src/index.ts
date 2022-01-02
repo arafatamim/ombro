@@ -115,4 +115,4 @@ export class Ombro {
   }
 }
 
-export { Config, Color, Light, Point, Shadow };
+export { Config, ConfigProps, Color, Light, Point, Shadow };

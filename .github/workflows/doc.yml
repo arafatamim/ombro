@@ -1,0 +1,32 @@
+name: Generate Documentation
+on: [push]
+jobs:
+  doc:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [15]
+    steps:
+      - uses: actions/checkout@2
+
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.24.3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: "pnpm install"
+
+      - name: Generate docs directory
+        run: "pnpm run doc"
+
+      - name: Deploy docs to Github Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: docs

@@ -1,5 +1,6 @@
 import { Color } from "./color";
 
+/** @internal */
 export interface ConfigProps {
   /** The quality of the shadow drawn. Higher numbers may
    * lead to lower performance on some devices.
