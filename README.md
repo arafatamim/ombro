@@ -1,4 +1,4 @@
-# Ombro
+# Ombro.js
 
 [![npm](https://img.shields.io/npm/v/ombro?color=%23CC3534&logo=npm)](https://www.npmjs.com/package/ombro)
 ![npm](https://img.shields.io/npm/dm/ombro)
@@ -47,6 +47,11 @@ window.addEventListener("mousemove", function(event) {
     ombro.draw()	// redraw shadows on change
 }, false)
 ```
+**Preview:**
+<video>
+<source src="https://user-images.githubusercontent.com/31634638/172718758-cb4dca4a-b268-4338-8686-137c33963212.mp4" type="video/mp4">
+Sorry, your browser doesn't support embedded videos.
+</video>
 
 ## API Reference
 
