@@ -48,10 +48,9 @@ window.addEventListener("mousemove", function(event) {
 }, false)
 ```
 **Preview:**
-<video>
-<source src="https://user-images.githubusercontent.com/31634638/172718758-cb4dca4a-b268-4338-8686-137c33963212.mp4" type="video/mp4">
-Sorry, your browser doesn't support embedded videos.
-</video>
+
+
+https://user-images.githubusercontent.com/31634638/172718758-cb4dca4a-b268-4338-8686-137c33963212.mp4
 
 ## API Reference
 
