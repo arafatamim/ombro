@@ -43,8 +43,8 @@ export class Shadow {
 
     if (enableAutoUpdates) {
       this.enableAutoUpdates();
-      this.handleViewportUpdate();
     }
+    this.handleViewportUpdate();
 
     window.addEventListener("load", this.#fnHandleWindowLoaded, false);
 
@@ -72,8 +72,8 @@ export class Shadow {
 
       const opacity =
         light.intensity * Math.max(0, config.opacity * (1.0 - ratioOpacity));
-      const offsetX = -(config.offset * x * ratioOffset);
-      const offsetY = -(config.offset * y * ratioOffset);
+      const offsetX = config.offset * x * ratioOffset;
+      const offsetY = config.offset * y * ratioOffset;
       const blurRadius = (distance * config.blur * ratioBlur) / 512;
 
       const shadow = getShadowString(
