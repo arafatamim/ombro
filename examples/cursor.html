@@ -13,7 +13,7 @@
   <div id="elem"></div>
 
   <script type="module">
-    import {Ombro, Color} from "https://unpkg.com/ombro/dist/esm/index.js"
+    import {Ombro, Color} from "../dist/esm/index.js"
 
     const ombro = new Ombro(document.getElementById("elem"), {
       shadowColor: new Color(0, 0, 0),
@@ -25,7 +25,7 @@
     window.addEventListener("mousemove", function (event) {
       ombro.setLightPosition(event.x, event.y)	// set coordinates of light position
       ombro.draw()	// redraw shadows on change
-    }, false)
+    })
   </script>
 </body>
 
