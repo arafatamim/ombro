@@ -54,6 +54,7 @@ https://user-images.githubusercontent.com/31634638/172718758-cb4dca4a-b268-4338-
 
 
 See more usage examples in [examples/](https://github.com/arafatamim/ombro/tree/main/examples) folder.
+**Live demos:** [cursor.html](https://arafatamim.github.io/ombro/examples/cursor.html), [light-grid.html](https://arafatamim.github.io/ombro/examples/light-grid.html).
 
 ## API Reference
 

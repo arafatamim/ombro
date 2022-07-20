@@ -9,7 +9,7 @@
     "build": "rimraf ./dist && rollup -c",
     "lint": "eslint ./src --ext .ts && tsc --noEmit -p .",
     "prepublish": "npm run lint",
-    "doc": "typedoc"
+    "doc": "node ./typedoc.gen.js"
   },
   "author": "Tamim Arafat <tamim.arafat@gmail.com>",
   "license": "MIT",
