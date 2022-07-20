@@ -52,6 +52,9 @@ window.addEventListener("mousemove", function(event) {
 
 https://user-images.githubusercontent.com/31634638/172718758-cb4dca4a-b268-4338-8686-137c33963212.mp4
 
+
+See more usage examples in [examples/](https://github.com/arafatamim/ombro/tree/main/examples) folder.
+
 ## API Reference
 
 The full API documentation is available [here](https://arafatamim.github.io/ombro).
@@ -62,7 +65,7 @@ Please open a new issue if you discover a bug or want to discuss a feature. If y
 
 ## Credits
 
-Forked from the unmaintained library [shine.js](https://github.com/bigspaceship/shine.js) and ported to TypeScript.
+Based on the unmaintained library [shine.js](https://github.com/bigspaceship/shine.js), ported to TypeScript and added new features.
 
 ## License
 

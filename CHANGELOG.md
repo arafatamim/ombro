@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.0.4] - 2022-07-20
+
+### Fixed
+
+- Shadow position bug.
+
 ## [0.0.3] - 2021-10-31
 
 ### Fixed
